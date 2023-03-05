@@ -4,200 +4,118 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+(function ($) {
 
-	var	$window = $(window),
+	var $window = $(window),
 		$body = $('body');
 
 	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+	breakpoints({
+		xlarge: ['1281px', '1680px'],
+		large: ['981px', '1280px'],
+		medium: ['737px', '980px'],
+		small: ['481px', '736px'],
+		xsmall: [null, '480px']
+	});
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+	$window.on('load', function () {
+		window.setTimeout(function () {
+			$body.removeClass('is-preload');
+		}, 100);
+	});
 
 	// Touch mode.
-		if (browser.mobile)
-			$body.addClass('is-touch');
+	if (browser.mobile)
+		$body.addClass('is-touch');
 
 	// Scrolly links.
-		$('.scrolly').scrolly({
-			speed: 2000
-		});
+	$('.scrolly').scrolly({
+		speed: 2000
+	});
 
 	// Dropdowns.
-		$('#nav > ul').dropotron({
-			alignment: 'right',
-			hideDelay: 350
-		});
+	$('#nav > ul').dropotron({
+		alignment: 'right',
+		hideDelay: 350
+	});
 
 	// Nav.
 
-		// Title Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
-				'</div>'
-			)
-				.appendTo($body);
+	// Title Bar.
+	$(
+		'<div id="titleBar">' +
+		'<a href="#navPanel" class="toggle"></a>' +
+		'<span class="title">' + $('#logo').html() + '</span>' +
+		'</div>'
+	)
+		.appendTo($body);
 
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
+	// Panel.
+	$(
+		'<div id="navPanel">' +
+		'<nav>' +
+		$('#nav').navList() +
+		'</nav>' +
+		'</div>'
+	)
+		.appendTo($body)
+		.panel({
+			delay: 500,
+			hideOnClick: true,
+			hideOnSwipe: true,
+			resetScroll: true,
+			resetForms: true,
+			side: 'left',
+			target: $body,
+			visibleClass: 'navPanel-visible'
+		});
 
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
-		if (browser.name == 'ie'
-		||	browser.mobile) {
+	if (browser.name == 'ie'
+		|| browser.mobile) {
 
-			$.fn._parallax = function() {
+		$.fn._parallax = function () {
 
-				return $(this);
+			return $(this);
 
-			};
+		};
 
-		}
-		else {
+	}
+	else {
 
-			$.fn._parallax = function() {
+		$.fn._parallax = function () {
 
-				$(this).each(function() {
-
-					var $this = $(this),
-						on, off;
-
-					on = function() {
-
-						$this
-							.css('background-position', 'center 0px');
-
-						$window
-							.on('scroll._parallax', function() {
-
-								var pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
-
-								$this.css('background-position', 'center ' + (pos * -0.15) + 'px');
-
-							});
-
-					};
-
-					off = function() {
-
-						$this
-							.css('background-position', '');
-
-						$window
-							.off('scroll._parallax');
-
-					};
-
-					breakpoints.on('<=medium', off);
-					breakpoints.on('>medium', on);
-
-				});
-
-				return $(this);
-
-			};
-
-			$window
-				.on('load resize', function() {
-					$window.trigger('scroll');
-				});
-
-		}
-
-	// Spotlights.
-		var $spotlights = $('.spotlight');
-
-		$spotlights
-			._parallax()
-			.each(function() {
+			$(this).each(function () {
 
 				var $this = $(this),
 					on, off;
 
-				on = function() {
+				on = function () {
 
-					var top, bottom, mode;
+					$this
+						.css('background-position', 'center 0px');
 
-					// Use main <img>'s src as this spotlight's background.
-						$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
+					$window
+						.on('scroll._parallax', function () {
 
-					// Side-specific scrollex tweaks.
-						if ($this.hasClass('top')) {
+							var pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
 
-							mode = 'top';
-							top = '-20%';
-							bottom = 0;
-
-						}
-						else if ($this.hasClass('bottom')) {
-
-							mode = 'bottom-only';
-							top = 0;
-							bottom = '20%';
-
-						}
-						else {
-
-							mode = 'middle';
-							top = 0;
-							bottom = 0;
-
-						}
-
-					// Add scrollex.
-						$this.scrollex({
-							mode:		mode,
-							top:		top,
-							bottom:		bottom,
-							initialize:	function(t) { $this.addClass('inactive'); },
-							terminate:	function(t) { $this.removeClass('inactive'); },
-							enter:		function(t) { $this.removeClass('inactive'); },
-
-							// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
-
-							//leave:	function(t) { $this.addClass('inactive'); },
+							$this.css('background-position', 'center ' + (pos * -0.15) + 'px');
+							// 여기가 이미지 효과주는 곳 위치 맞추기 해야됨
 
 						});
 
 				};
 
-				off = function() {
+				off = function () {
 
-					// Clear spotlight's background.
-						$this.css('background-image', '');
+					$this
+						.css('background-position', '');
 
-					// Remove scrollex.
-						$this.unscrollex();
+					$window
+						.off('scroll._parallax');
 
 				};
 
@@ -205,46 +123,178 @@
 				breakpoints.on('>medium', on);
 
 			});
+
+			return $(this);
+
+		};
+
+		$window
+			.on('load resize', function () {
+				$window.trigger('scroll');
+			});
+
+	}
+
+	// Spotlights.
+	var $spotlights = $('.spotlight');
+
+	$spotlights
+		._parallax()
+		.each(function () {
+
+			var $this = $(this),
+				on, off;
+
+			on = function () {
+
+				var top, bottom, mode;
+
+				// Use main <img>'s src as this spotlight's background.
+				$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
+
+				// Side-specific scrollex tweaks.
+				if ($this.hasClass('top')) {
+
+					mode = 'top';
+					top = '-20%';
+					bottom = 0;
+
+				}
+				else if ($this.hasClass('bottom')) {
+
+					mode = 'bottom-only';
+					top = 0;
+					bottom = '20%';
+
+				}
+				else {
+
+					mode = 'middle';
+					top = 0;
+					bottom = 0;
+
+				}
+
+				// Add scrollex.
+				$this.scrollex({
+					mode: mode,
+					top: top,
+					bottom: bottom,
+					initialize: function (t) { $this.addClass('inactive'); },
+					terminate: function (t) { $this.removeClass('inactive'); },
+					enter: function (t) { $this.removeClass('inactive'); },
+
+					// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
+
+					//leave:	function(t) { $this.addClass('inactive'); },
+
+				});
+
+			};
+
+			off = function () {
+
+				// Clear spotlight's background.
+				$this.css('background-image', '');
+
+				// Remove scrollex.
+				$this.unscrollex();
+
+			};
+
+			breakpoints.on('<=medium', off);
+			breakpoints.on('>medium', on);
+
+		});
 
 	// Wrappers.
-		var $wrappers = $('.wrapper');
+	var $wrappers = $('.wrapper');
 
-		$wrappers
-			.each(function() {
+	$wrappers
+		.each(function () {
 
-				var $this = $(this),
-					on, off;
+			var $this = $(this),
+				on, off;
 
-				on = function() {
+			on = function () {
 
-					$this.scrollex({
-						top:		250,
-						bottom:		0,
-						initialize:	function(t) { $this.addClass('inactive'); },
-						terminate:	function(t) { $this.removeClass('inactive'); },
-						enter:		function(t) { $this.removeClass('inactive'); },
+				$this.scrollex({
+					top: 250,
+					bottom: 0,
+					initialize: function (t) { $this.addClass('inactive'); },
+					terminate: function (t) { $this.removeClass('inactive'); },
+					enter: function (t) { $this.removeClass('inactive'); },
 
-						// Uncomment the line below to "rewind" when this wrapper scrolls out of view.
+					// Uncomment the line below to "rewind" when this wrapper scrolls out of view.
 
-						//leave:	function(t) { $this.addClass('inactive'); },
+					//leave:	function(t) { $this.addClass('inactive'); },
 
-					});
+				});
 
-				};
+			};
 
-				off = function() {
-					$this.unscrollex();
-				};
+			off = function () {
+				$this.unscrollex();
+			};
 
-				breakpoints.on('<=medium', off);
-				breakpoints.on('>medium', on);
+			breakpoints.on('<=medium', off);
+			breakpoints.on('>medium', on);
 
-			});
+		});
 
 	// Banner.
-		var $banner = $('#banner');
+	var $banner = $('#banner');
 
-		$banner
-			._parallax();
+	$banner
+		._parallax();
 
 })(jQuery);
+
+
+
+$(window).scroll(function () {
+	var home = $("#banner").offset().top;
+	var one = $("#one").offset().top;
+	var two = $("#two").offset().top;
+	var three = $("#three").offset().top;
+	var four = $("#four").offset().top;
+	var five = $("#five").offset().top;
+
+
+
+	var homeBottom = home + $("#banner").height() - 100;
+	var oneBottom = one + $("#one").height() - 100;
+	var twoBottom = two + $("#two").height() - 100;
+	var threeBottom = three + $("#three").height() - 100;
+	var fourBottom = four + $("#four").height() - 100;
+	var fiveBottom = four + $("#four").height() - 100;
+
+	if ($(this).scrollTop() < homeBottom) {
+		$('#nav').find('a').removeClass('thisSection');
+		$('#homeText').addClass('thisSection');
+	} else if ($(this).scrollTop() > homeBottom && $(this).scrollTop() < oneBottom) {
+		console.log("바크동" + $(this).scrollTop())
+		$('#nav').find('a').removeClass('thisSection');
+		$('#oneText').addClass('thisSection');
+	} else if ($(this).scrollTop() > oneBottom && $(this).scrollTop() < twoBottom) {
+		$('#nav').find('a').removeClass('thisSection');
+		$('#twoText').addClass('thisSection');
+	}
+	else if ($(this).scrollTop() > twoBottom && $(this).scrollTop() < threeBottom) {
+		$('#nav').find('a').removeClass('thisSection');
+		$('#threeText').addClass('thisSection');
+	} else if ($(this).scrollTop() > threeBottom && $(this).scrollTop() < fourBottom) {
+		$('#nav').find('a').removeClass('thisSection');
+		$('#fourText').addClass('thisSection');
+	} else if ($(this).scrollTop() > fourBottom && $(this).scrollTop() < fiveBottom) {
+		$('#nav').find('a').removeClass('thisSection');
+		$('#fourText').addClass('thisSection');
+	} else if ($(this).scrollTop() > fiveBottom) {
+		$('#nav').find('a').removeClass('thisSection');
+		$('#fiveText').addClass('thisSection');
+	}
+
+
+	//  어디아래 a태그 싹다 날리기임
+
+})
