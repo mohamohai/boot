@@ -148,12 +148,17 @@ body {
 
 #gotop {
 	position: fixed;
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 50px;
 	background-color: slateblue;
 	right: 100px;
 	bottom: 100px;
 	z-index: 500;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 1s;
 }
 
 mark {
