@@ -146,6 +146,16 @@ body {
 	color: blue !important;
 }
 
+#gotop {
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	background-color: slateblue;
+	right: 100px;
+	bottom: 100px;
+	z-index: 500;
+}
+
 mark {
 	background-color: transparent;
 	color: inherit;
@@ -3916,8 +3926,9 @@ body.is-touch #banner {
 
 @media screen and (max-width: 736px) {
 	.logoimg {
-		width: 150px;
-		padding: 0px;
+		width: 8em;
+		padding-top: 0.5em;
+		display: inline;
 	}
 
 	/* Basic */
