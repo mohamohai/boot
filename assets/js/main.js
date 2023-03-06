@@ -273,7 +273,6 @@ $(window).scroll(function () {
 		$('#nav').find('a').removeClass('thisSection');
 		$('#homeText').addClass('thisSection');
 	} else if ($(this).scrollTop() > homeBottom && $(this).scrollTop() < oneBottom) {
-		console.log("바크동" + $(this).scrollTop())
 		$('#nav').find('a').removeClass('thisSection');
 		$('#oneText').addClass('thisSection');
 	} else if ($(this).scrollTop() > oneBottom && $(this).scrollTop() < twoBottom) {
