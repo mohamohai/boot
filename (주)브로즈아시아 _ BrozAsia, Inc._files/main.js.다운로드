@@ -1,0 +1,175 @@
+(function ($) {
+    "use strict";
+
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
+            }
+        }, 1);
+    };
+    spinner();
+    
+    
+    // Initiate the wowjs
+    new WOW().init();
+
+
+    // Fixed Navbar
+    $(window).scroll(function () {
+        if ($(window).width() < 992) {
+            if ($(this).scrollTop() > 45) {
+                $('.fixed-top').addClass('bg-dark shadow');
+            } else {
+                $('.fixed-top').removeClass('bg-dark shadow');
+            }
+        } else {
+            if ($(this).scrollTop() > 45) {
+                $('.fixed-top').addClass('bg-dark shadow').css('top', 0);
+            } else {
+                $('.fixed-top').removeClass('bg-dark shadow').css('top', 0);
+            }
+        }
+        if ($(this).scrollTop() < 850) {
+            $('.scroll').removeClass('active');
+            $('.nav-top').addClass('active');
+        }
+        if ($(this).scrollTop() > 850 && $(this).scrollTop() < 1400) {
+            $('.scroll').removeClass('active');
+            $('.nav-about').addClass('active');
+        }
+        if ($(this).scrollTop() > 1400 && $(this).scrollTop() < 2300) {
+            $('.scroll').removeClass('active');
+            $('.nav-business').addClass('active');
+        }
+        if ($(this).scrollTop() > 2300 && $(this).scrollTop() < 3800) {
+            $('.scroll').removeClass('active');
+            $('.nav-history').addClass('active');
+        }
+        if ($(this).scrollTop() > 3800 && $(this).scrollTop() < 4500) {
+            $('.scroll').removeClass('active');
+            $('.nav-portfolio').addClass('active');
+        }
+        if ($(this).scrollTop() > 4500 && $(this).scrollTop() < 5000) {
+            $('.scroll').removeClass('active');
+            $('.nav-contact').addClass('active');
+        }
+        if ($(this).scrollTop() > 5000 && $(this).scrollTop() < 6000) {
+            $('.scroll').removeClass('active');
+            $('.nav-member').addClass('active');
+        }
+    });
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('fast');
+        } else {
+            $('.back-to-top').fadeOut('fast');
+        }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 500, 'easeInOutExpo');
+        return false;
+    });
+
+
+    // Causes progress
+    $('.causes-progress').waypoint(function () {
+        $('.progress .progress-bar').each(function () {
+            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+        });
+    }, {offset: '80%'});
+
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: false,
+        smartSpeed: 1000,
+        center: true,
+        dots: false,
+        loop: true,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsive: {
+            0:{
+                items:1
+            },
+            768:{
+                items:2
+            }
+        }
+    });
+
+    $(".alert-ready").click(function() {
+        alert('현재 준비중입니다');
+    });
+
+    $(document).on('click', '.btn-form-submit', function() {
+        var $btn = $(this);
+        var $dom = $(this).parent().parent().parent().parent().find('.contactForm');
+        var formData = new FormData($dom[0]);
+
+        if ($('input[name=client_name]', $dom).val() == '') {
+            $('.error-message', $dom).slideDown().text('이름은 꼭 입력해주세요.');
+            setTimeout(function() { $('.error-message', $dom).slideUp().text(''); }, 2000);
+            return false;
+        }
+        if ($('input[name=client_phone]', $dom).val() == '') {
+            $('.error-message', $dom).slideDown().text('이메일은 꼭 입력해주세요.');
+            setTimeout(function() { $('.error-message', $dom).slideUp().text(''); }, 2000);
+            return false;
+        }
+        if ($('textarea[name=client_message]', $dom).val() == '') {
+            $('.error-message', $dom).slideDown().text('문의 내용은 꼭 입력해주세요.');
+            setTimeout(function() { $('.error-message', $dom).slideUp().text(''); }, 2000);
+            return false;
+        }
+
+        $.ajax({
+            url: '/save.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            type: 'post',
+            beforeSend: function() {
+                $btn.css('opacity', '0.5').prop('disabled', true);
+            },
+            success: function(result) {
+                $btn.css('opacity', '1').prop('disabled', false);
+                if (result.error == 1) {
+                    $('.error-message', $dom).text(result.message).slideDown();
+                    setTimeout(function() { $('.error-message', $dom).text('').slideUp(); }, 3000);
+                } else {
+                    $('input[name=client_name]', $dom).val('');
+                    $('input[name=client_phone]', $dom).val('');
+                    $('textarea[name=client_message]', $dom).val('');
+                    alert('감사합니다. 담당자가 연락 드리겠습니다.');
+                }
+            }
+        });
+    }).on('click', '.scroll', function(e) {
+        e.preventDefault();
+        $('.scroll').removeClass('active');
+        $('html,body').animate({scrollTop:$(this.hash).offset().top - 100}, 500);
+        $(this).addClass('active');
+    }).on('click', '.first', function() {
+        var idx = $(this).data('idx');
+        $('.first').removeClass('active');
+        $('.first[data-idx=' + idx + ']').addClass('active');
+        $('.select-data, .content-data').hide();
+        $('#content').text('1. 프로젝트 명 : ' + $(this).text());
+        $('.select-data[data-idx=' + idx + ']').slideDown();
+    }).on('click', '.second', function() {
+        var idx = $(this).data('idx');
+        $('.second[data-idx=' + idx + ']').addClass('active');
+        $('#content').text($('#content').text() + '\n2. 프로젝트 내용 : ' + $(this).text() + '\n3. 상세 내용\n');
+        $('.content-data').slideDown();
+    });
+})(jQuery);
