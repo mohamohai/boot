@@ -143,27 +143,21 @@ body {
 }
 
 .thisSection {
-<<<<<<< HEAD
 	color: rgb(228,76,101) !important;
-=======
 	color: blue !important;
 	/* 이거 색변경 */
->>>>>>> 2dc5228b14bd84c391a4434dafc85bbab493fcfa
 }
 
 #top_btn {
 	position: fixed;
 	width: 50px;
 	height: 50px;
-<<<<<<< HEAD
 	background-color: rgba(39, 40, 51);
 	right: 50px;
 	bottom: 50px;
-=======
 	background-color: white;
 	right: 100px;
 	bottom: 100px;
->>>>>>> 2dc5228b14bd84c391a4434dafc85bbab493fcfa
 	z-index: 500;
 	border-radius: 5px;
 	border: solid 1px white;
@@ -181,9 +175,13 @@ mark {
 	color: inherit;
 }
 .onep{
+	margin-top: 5em;
+
 	font-size: 0.9em;
-	line-height: 1.5em;
+	line-height: 1.75em;
 }
+
+
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
@@ -2428,7 +2426,7 @@ header h2+p {
 }
 
 header h3+p {
-	font-size: 1.1em;
+	font-size: 0.9em;
 	margin-top: -0.8em;
 	line-height: 1.75em;
 }
@@ -3390,11 +3388,10 @@ input[type="button"]:disabled,
 	transition-delay: 0.5s;
 	opacity: 1;
 }
-
 .spotlight.top .content,
 .spotlight.bottom .content {
 	left: 0;
-	padding: 5.1em 0 3.1em 0;
+	padding: 3em 0 2.5em 0;
 	width: 100%;
 }
 
@@ -3747,13 +3744,10 @@ body.landing #page-wrapper {
 
 /* 여기가 gnb */
 body.landing #header {
-<<<<<<< HEAD
 	background: rgba(39, 40, 51, 1);
 	box-shadow: none;
-=======
 	background: rgba(39, 40, 51, 0.965);
 	box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
->>>>>>> 2dc5228b14bd84c391a4434dafc85bbab493fcfa
 	position: absolute;
 }
 
@@ -3763,8 +3757,8 @@ body.landing #header {
 	/* 여기가 배경 */
 	background-attachment: fixed;
 	background-color: #272833;
-	background-image: url("../../images/logo_brozasia.png");
-	background-position: center center;
+	background-image: url("../../images/logoseoulbroz.png");
+	background-position: center ;
 	background-size: cover;
 	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
 	min-height: 100vh;
@@ -4140,6 +4134,9 @@ body.is-touch #banner {
 	select,
 	textarea {
 		font-size: 12pt;
+	}
+	.onep{
+		margin-top: 1em;
 	}
 
 	/* Spotlight */
@@ -4655,4 +4652,12 @@ body.is-touch #banner {
 	100% {
 		transform: translateY(30px);
 	}
+}
+
+#five{
+	display: none;
+}
+
+.linewarp{
+	white-space: normal;
 }
