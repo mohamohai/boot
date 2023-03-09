@@ -251,7 +251,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.35em;
+	font-size: 1.2em;
 	line-height: 1.5em;
 }
 
@@ -4091,7 +4091,7 @@ body.is-touch #banner {
 		font-size: 12pt;
 	}
 	.onep{
-		margin-top: 1em;
+		margin-top: 0.7em;
 	}
 
 	/* Spotlight */
@@ -4207,7 +4207,7 @@ body.is-touch #banner {
 	}
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 
 	h3 {
@@ -4229,7 +4229,7 @@ body.is-touch #banner {
 	}
 
 	header h3+p {
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 
 	header h4+p,
@@ -4718,7 +4718,7 @@ mark {
 	color: inherit;
 }
 .onep{
-	margin-top: 5em;
+	margin-top: 4.5em;
 
 	font-size: 0.9em;
 	line-height: 1.75em;
