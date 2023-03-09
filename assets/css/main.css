@@ -4090,9 +4090,7 @@ body.is-touch #banner {
 	textarea {
 		font-size: 12pt;
 	}
-	.onep{
-		margin-top: 0.7em;
-	}
+
 
 	/* Spotlight */
 
@@ -4592,7 +4590,7 @@ body.is-touch #banner {
 }
 
 .moveNext {
-	animation: moveNexta 2s infinite linear;
+	animation: moveNexta 1s infinite linear;
 }
 
 @keyframes moveNexta {
@@ -4629,7 +4627,7 @@ body.is-touch #banner {
 	padding: 0px;
 	list-style: none;
 	text-align: left;
-	font-size: 0.8em;
+	font-size: 0.7em;
 	font-weight: bold;
 	color: rgb(128,142,145);
 }
@@ -4737,4 +4735,8 @@ mark {
 
 .me-3{
 	margin-right: 13px;
+}
+
+.bold{
+	font-weight: bold;
 }
