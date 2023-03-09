@@ -142,30 +142,6 @@ body {
 	-webkit-text-size-adjust: none;
 }
 
-.thisSection {
-	color: blue !important;
-	/* 이거 색변경 */
-}
-
-#gotop {
-	position: fixed;
-	width: 50px;
-	height: 50px;
-	background-color: white;
-	right: 100px;
-	bottom: 100px;
-	z-index: 500;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all 1s;
-}
-
-mark {
-	background-color: transparent;
-	color: inherit;
-}
 
 input::-moz-focus-inner {
 	border: 0;
@@ -215,11 +191,10 @@ body,
 input,
 select,
 textarea {
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(255, 255, 255, 1);
 	font-family: "Roboto", Helvetica, sans-serif;
 	font-size: 15pt;
-	font-weight: 100;
-	line-height: 1.75em;
+	line-height: 1.65em;
 }
 
 a {
@@ -227,15 +202,10 @@ a {
 	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	border-bottom: dotted 1px;
-	color: #e44c65;
+	color: rgb(247, 90, 105);
 	text-decoration: none;
 }
 
-a:hover {
-	color: #e44c65 !important;
-	border-bottom-color: transparent;
-}
 
 strong,
 b {
@@ -751,6 +721,15 @@ body.landing.is-preload:after {
 	z-index: 100000;
 }
 
+
+
+
+
+
+
+
+
+
 @media (-webkit-min-device-pixel-ratio: 2) {
 
 	body.landing:before {
@@ -801,6 +780,20 @@ body.landing.is-preload:after {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 980px) {
 	.logoimg {
 		display: none;
@@ -813,6 +806,16 @@ body.landing.is-preload:after {
 }
 
 /* Row */
+
+
+
+
+
+
+
+
+
+
 
 .row {
 	display: flex;
@@ -1061,6 +1064,19 @@ body.landing.is-preload:after {
 	padding-top: 5em;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1680px) {
 
 	.row {
@@ -1305,6 +1321,22 @@ body.landing.is-preload:after {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1280px) {
 
@@ -1551,6 +1583,18 @@ body.landing.is-preload:after {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 980px) {
 
 	.row {
@@ -1796,6 +1840,18 @@ body.landing.is-preload:after {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 736px) {
 
 	.row {
@@ -2040,6 +2096,25 @@ body.landing.is-preload:after {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 480px) {
 
@@ -2300,13 +2375,13 @@ header p {
 }
 
 header h2+p {
-	font-size: 1.25em;
+	font-size: 1.0em;
 	margin-top: -1em;
 	line-height: 1.75em;
 }
 
 header h3+p {
-	font-size: 1.1em;
+	font-size: 0.9em;
 	margin-top: -0.8em;
 	line-height: 1.75em;
 }
@@ -2326,7 +2401,7 @@ header.major {
 }
 
 header.major:after {
-	background: #e44c65;
+	background: rgb(247, 90, 105);
 	content: '';
 	display: inline-block;
 	height: 0.2em;
@@ -2395,7 +2470,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-	border-color: #e44c65;
+	border-color: rgb(247, 90, 105);
 }
 
 select {
@@ -2449,7 +2524,7 @@ input[type="radio"] {
 input[type="checkbox"]+label,
 input[type="radio"]+label {
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(255, 255, 255, 1);
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1em;
@@ -2498,7 +2573,7 @@ input[type="radio"]:checked+label:before {
 
 input[type="checkbox"]:focus+label:before,
 input[type="radio"]:focus+label:before {
-	border-color: #e44c65;
+	border-color: rgb(247, 90, 105);
 }
 
 input[type="checkbox"]+label:before {
@@ -2841,6 +2916,26 @@ ul.actions.fit.stacked {
 	width: 100%;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 480px) {
 
 	ul.actions:not(.fixed) {
@@ -2998,8 +3093,8 @@ input[type="button"]:hover,
 input[type="button"]:active,
 .button:hover,
 .button:active {
-	box-shadow: inset 0 0 0 1px #e44c65;
-	color: #e44c65 !important;
+	box-shadow: inset 0 0 0 1px rgb(247, 90, 105);
+	color: rgb(247, 90, 105) !important;
 }
 
 input[type="submit"]:active,
@@ -3041,7 +3136,7 @@ input[type="submit"].primary,
 input[type="reset"].primary,
 input[type="button"].primary,
 .button.primary {
-	background-color: #e44c65;
+	background-color: rgb(247, 90, 105);
 	box-shadow: none;
 	color: #ffffff !important;
 }
@@ -3248,11 +3343,10 @@ input[type="button"]:disabled,
 	transition-delay: 0.5s;
 	opacity: 1;
 }
-
 .spotlight.top .content,
 .spotlight.bottom .content {
 	left: 0;
-	padding: 5.1em 0 3.1em 0;
+	padding: 3em 0 2.5em 0;
 	width: 100%;
 }
 
@@ -3285,7 +3379,7 @@ input[type="button"]:disabled,
 }
 
 .spotlight.style1 .content {
-	border-color: #e44c65;
+	border-color: rgb(247, 90, 105);
 }
 
 .spotlight.style2 .content {
@@ -3347,7 +3441,7 @@ body.is-touch .spotlight {
 }
 
 .wrapper.style2 {
-	background: #e44c65;
+	background: rgb(247, 90, 105);
 }
 
 .wrapper.style2 input[type="text"]:focus,
@@ -3383,7 +3477,7 @@ body.is-touch .spotlight {
 .wrapper.style2 input[type="button"].primary,
 .wrapper.style2 .button.primary {
 	background-color: #ffffff;
-	color: #e44c65 !important;
+	color: rgb(247, 90, 105) !important;
 }
 
 .wrapper.style2 input[type="submit"].primary:hover,
@@ -3478,7 +3572,7 @@ body.is-touch .spotlight {
 .dropotron>li a,
 .dropotron>li span {
 	border: 0;
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(255, 255, 255, 1);
 	display: block;
 	padding: 0.1em 1em;
 	text-decoration: none;
@@ -3490,7 +3584,7 @@ body.is-touch .spotlight {
 
 .dropotron>li.active>a,
 .dropotron>li.active>span {
-	color: #e44c65;
+	color: rgb(247, 90, 105);
 }
 
 .dropotron.level-0 {
@@ -3524,8 +3618,8 @@ body.landing .dropotron.level-0 {
 }
 
 .logoimg {
-	padding: 10px;
-	width: 8.5em;
+	padding: 15px;
+	width: 10em;
 
 }
 
@@ -3564,6 +3658,8 @@ body.landing .dropotron.level-0 {
 #header nav ul li {
 	display: inline-block;
 	margin-left: 1em;
+	font-weight: bold;
+
 }
 
 #header nav ul li a,
@@ -3590,7 +3686,7 @@ body.landing .dropotron.level-0 {
 
 #header nav ul li.active>a,
 #header nav ul li.active>span {
-	color: #e44c65;
+	color: rgb(247, 90, 105);
 }
 
 #header nav ul li>ul {
@@ -3603,6 +3699,8 @@ body.landing #page-wrapper {
 
 /* 여기가 gnb */
 body.landing #header {
+	background: rgba(39, 40, 51, 1);
+	box-shadow: none;
 	background: rgba(39, 40, 51, 0.965);
 	box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
 	position: absolute;
@@ -3614,8 +3712,8 @@ body.landing #header {
 	/* 여기가 배경 */
 	background-attachment: fixed;
 	background-color: #272833;
-	background-image: url("../../images/logo_brozasia.png");
-	background-position: center center;
+	background-image: url("../../images/logoseoulbroz.png");
+	background-position: center ;
 	background-size: cover;
 	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
 	min-height: 100vh;
@@ -3758,6 +3856,24 @@ body.is-touch #banner {
 
 /* XLarge */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1680px) {
 
 	/* Basic */
@@ -3772,6 +3888,100 @@ body.is-touch #banner {
 }
 
 /* Large */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1280px) {
 
@@ -3828,6 +4038,48 @@ body.is-touch #banner {
 
 /* Medium */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 980px) {
 
 	/* Basic */
@@ -3837,6 +4089,9 @@ body.is-touch #banner {
 	select,
 	textarea {
 		font-size: 12pt;
+	}
+	.onep{
+		margin-top: 1em;
 	}
 
 	/* Spotlight */
@@ -3932,7 +4187,7 @@ body.is-touch #banner {
 
 @media screen and (max-width: 736px) {
 	.logoimg {
-		width: 8em;
+		width: 10em;
 		padding-top: 0.5em;
 		display: inline;
 	}
@@ -4120,7 +4375,7 @@ body.is-touch #banner {
 	}
 
 	#titleBar .toggle:before {
-		background: #e44c65;
+		background: rgb(247, 90, 105);
 		color: rgba(255, 255, 255, 0.5);
 		content: '\f0c9';
 		display: block;
@@ -4162,7 +4417,7 @@ body.is-touch #banner {
 	#navPanel .link {
 		border: 0;
 		border-top: solid 1px rgba(255, 255, 255, 0.05);
-		color: rgba(255, 255, 255, 0.75);
+		color: rgba(255, 255, 255, 1);
 		display: block;
 		height: 3em;
 		line-height: 3em;
@@ -4237,6 +4492,38 @@ body.is-touch #banner {
 }
 
 /* XSmall */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 480px) {
 
@@ -4320,4 +4607,130 @@ body.is-touch #banner {
 	100% {
 		transform: translateY(30px);
 	}
+}
+
+#five{
+	display: none;
+}
+
+.linewarp{
+	white-space: normal;
+}
+
+.footerSection{
+	text-align: left;
+}
+.footerSection h2{
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+.footerSection p{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-align: left;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: rgb(128,142,145);
+}
+
+.footerSection p span{
+	margin: 2px 2px 0px 0px;
+	padding: 5px;
+	border-radius: 5px;
+	border: solid 1px rgb(128,142,145);
+	font-size: 1.2rem;
+	
+}
+.footerSection ul {
+	margin: 0px;
+	padding: 0px;
+}
+.footerSection ul li{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-align: left;
+	font-size: 0.9em;
+	font-weight: bold !important;
+	color: rgb(128,142,145);
+	position: relative;
+}
+.footerSection ul li a{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-align: left;
+	font-size: 0.9em;
+	font-weight: bold !important;
+	color: rgb(128,142,145);
+	position: relative;
+}
+.footerSection input{
+	width: 100%;
+	height: 61px;
+	padding: 20px;
+}
+.NewsLetterbtn{
+	background-color: rgb(247, 90, 105);
+	padding: calc(20px - 0.9em);
+	font-size: 0.9em;
+	border-radius: 5px;
+	position: absolute;
+	top: 7px;
+	right: 10px;
+	color: white;
+	font-weight: bold;
+}
+
+.thisSection {
+	color: rgb(247, 90, 105) !important;
+	font-weight:900 !important;
+	transition: all 0.1s;
+	transform: scale(1.1);
+	/* 이거 색변경 */
+}
+
+#top_btn {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(39, 40, 51);
+	right: 50px;
+	bottom: 50px;
+	background-color: white;
+	right: 100px;
+	bottom: 100px;
+	z-index: 500;
+	border-radius: 5px;
+	border: solid 1px white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s;
+	opacity: 0;
+}
+.top_btnDisplay{
+	opacity: 1 !important;
+}
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+.onep{
+	margin-top: 5em;
+
+	font-size: 0.9em;
+	line-height: 1.75em;
+}
+
+.Linkblock{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-align: left;
+	font-size: 0.8rem !important;
+	font-weight: bold !important;
+	color: rgb(128,142,145);
+	position: relative;
 }
