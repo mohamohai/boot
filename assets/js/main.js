@@ -268,30 +268,30 @@ $(window).scroll(function () {
 	var threeBottom = three + $("#three").height() - 100;
 	var fourBottom = four + $("#four").height() - 100;
 	var fiveBottom = four + $("#four").height() - 100;
-
 	if ($(this).scrollTop() < homeBottom) {
 		$('#nav').find('a').removeClass('thisSection');
 		$('#homeText').addClass('thisSection');
+		$('#top_btn').removeClass('top_btnDisplay');
 	} else if ($(this).scrollTop() > homeBottom && $(this).scrollTop() < oneBottom) {
-		console.log("바크동" + $(this).scrollTop())
 		$('#nav').find('a').removeClass('thisSection');
 		$('#oneText').addClass('thisSection');
+		$('#top_btn').addClass('top_btnDisplay');
 	} else if ($(this).scrollTop() > oneBottom && $(this).scrollTop() < twoBottom) {
 		$('#nav').find('a').removeClass('thisSection');
-		$('#twoText').addClass('thisSection');
+		$('#twoText').addClass('thisSection');$('#top_btn').addClass('top_btnDisplay');
 	}
 	else if ($(this).scrollTop() > twoBottom && $(this).scrollTop() < threeBottom) {
 		$('#nav').find('a').removeClass('thisSection');
-		$('#threeText').addClass('thisSection');
+		$('#threeText').addClass('thisSection');$('#top_btn').addClass('top_btnDisplay');
 	} else if ($(this).scrollTop() > threeBottom && $(this).scrollTop() < fourBottom) {
 		$('#nav').find('a').removeClass('thisSection');
-		$('#fourText').addClass('thisSection');
+		$('#fourText').addClass('thisSection');$('#top_btn').addClass('top_btnDisplay');
 	} else if ($(this).scrollTop() > fourBottom && $(this).scrollTop() < fiveBottom) {
 		$('#nav').find('a').removeClass('thisSection');
-		$('#fourText').addClass('thisSection');
+		$('#fourText').addClass('thisSection');$('#top_btn').addClass('top_btnDisplay');
 	} else if ($(this).scrollTop() > fiveBottom) {
 		$('#nav').find('a').removeClass('thisSection');
-		$('#fiveText').addClass('thisSection');
+		$('#fiveText').addClass('thisSection');$('#top_btn').addClass('top_btnDisplay');
 	}
 
 
