@@ -220,6 +220,7 @@ i {
 
 p {
 	margin: 0 0 2em 0;
+	font-size: 0.8em;
 }
 
 h1,
@@ -4586,33 +4587,23 @@ body.is-touch #banner {
 		margin: 0;
 		padding: 0;
 	}
-
 }
-
 .moveNext {
 	animation: moveNexta 1s infinite linear;
 }
-
 @keyframes moveNexta {
 	0% {
 		transform: translateY(0px);
 	}
-
 	50% {
 		transform: translateY(15px);
 	}
-
 	100% {
 		transform: translateY(30px);
 	}
 }
-
 #five{
 	display: none;
-}
-
-.linewarp{
-	white-space: normal;
 }
 
 .footerSection{
@@ -4625,20 +4616,19 @@ body.is-touch #banner {
 .footerSection p{
 	margin: 0px;
 	padding: 0px;
-	list-style: none;
-	text-align: left;
+	color: rgb(128,142,145);
 	font-size: 0.7em;
 	font-weight: bold;
-	color: rgb(128,142,145);
-}
+	list-style: none;
+	text-align: left;
 
+}
 .footerSection p span{
 	margin: 2px 2px 0px 0px;
 	padding: 5px;
 	border-radius: 5px;
 	border: solid 1px rgb(128,142,145);
 	font-size: 1.2rem;
-	
 }
 .footerSection ul {
 	margin: 0px;
@@ -4647,22 +4637,22 @@ body.is-touch #banner {
 .footerSection ul li{
 	margin: 0px;
 	padding: 0px;
-	list-style: none;
-	text-align: left;
+	color: rgb(128,142,145);
 	font-size: 0.9em;
 	font-weight: bold !important;
-	color: rgb(128,142,145);
+	list-style: none;
 	position: relative;
+	text-align: left;
 }
 .footerSection ul li a{
 	margin: 0px;
 	padding: 0px;
-	list-style: none;
-	text-align: left;
+	color: rgb(128,142,145);
 	font-size: 0.9em;
 	font-weight: bold !important;
-	color: rgb(128,142,145);
+	list-style: none;
 	position: relative;
+	text-align: left;
 }
 .footerSection input{
 	width: 100%;
@@ -4670,71 +4660,60 @@ body.is-touch #banner {
 	padding: 20px;
 }
 .NewsLetterbtn{
-	background-color: rgb(247, 90, 105);
 	padding: calc(20px - 0.9em);
-	font-size: 0.9em;
-	border-radius: 5px;
 	position: absolute;
 	top: 7px;
 	right: 10px;
+	background-color: rgb(247, 90, 105);
+	border-radius: 5px;
 	color: white;
+	font-size: 0.9em;
 	font-weight: bold;
 }
-
 .thisSection {
 	color: rgb(247, 90, 105) !important;
 	font-weight:900 !important;
 	transition: all 0.1s;
 	transform: scale(1.1);
-	/* 이거 색변경 */
 }
-
 #top_btn {
-	position: fixed;
 	width: 50px;
 	height: 50px;
-	background-color: rgba(39, 40, 51);
+	position: fixed;
 	right: 4.5%;
 	bottom: 5%;
 	background-color: white;
-	z-index: 500;
-	border-radius: 5px;
 	border: solid 1px white;
+	border-radius: 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.5s;
 	opacity: 0;
+	transition: all 0.5s;
+	z-index: 500;
+
 }
 .top_btnDisplay{
 	opacity: 1 !important;
 }
-mark {
-	background-color: transparent;
-	color: inherit;
-}
 .onep{
 	margin-top: 4.5em;
-
 	font-size: 0.9em;
 	line-height: 1.75em;
 }
-
 .Linkblock{
 	margin: 0px;
 	padding: 0px;
-	list-style: none;
-	text-align: left;
+	color: rgb(128,142,145);
 	font-size: 0.9em !important;
 	font-weight: bold !important;
-	color: rgb(128,142,145);
+	list-style: none;
 	position: relative;
+	text-align: left;
 }
-
 .me-3{
 	margin-right: 13px;
 }
-
 .bold{
 	font-weight: bold;
 }
