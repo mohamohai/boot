@@ -3735,13 +3735,13 @@ body.landing #header {
 }
 
 #banner:after {
-	background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/943043.jpg");
+	background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95));
 	;
-	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/943043.png");
+	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95));
 	;
-	background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/943043.png");
+	background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95));
 	;
-	background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/943043.png");
+	background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95));
 	;
 	content: '';
 	display: block;
@@ -4729,8 +4729,12 @@ mark {
 	padding: 0px;
 	list-style: none;
 	text-align: left;
-	font-size: 0.8rem !important;
+	font-size: 0.9em !important;
 	font-weight: bold !important;
 	color: rgb(128,142,145);
 	position: relative;
+}
+
+.me-3{
+	margin-right: 13px;
 }
