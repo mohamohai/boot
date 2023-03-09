@@ -85,7 +85,6 @@
               parseInt($window.scrollTop()) - parseInt($this.position().top);
 
             $this.css("background-position", "center " + pos * -0.15 + "px");
-            // 여기가 이미지 효과주는 곳 위치 맞추기 해야됨
           });
         };
 
